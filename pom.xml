@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.18</version>
+        <relativePath/>
+    </parent>
+    <groupId>org.bigearpig</groupId>
+    <artifactId>house</artifactId>
+    <version>1.0</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <copy.jar.directory>D:\code\cloud</copy.jar.directory>
+        <lombok.version>1.18.12</lombok.version>
+        <jasypt.version>3.0.3</jasypt.version>
+        <fastjson.version>1.2.83</fastjson.version>
+        <hutool-all.version>5.7.15</hutool-all.version>
+        <poi.version>5.0.0</poi.version>
+        <webmagic.version>0.7.3</webmagic.version>
+        <freemarker.version>2.3.29</freemarker.version>
+        <swagger2.version>2.9.2</swagger2.version>
+        <redisson.version>3.16.2</redisson.version>
+        <mybatis-plus.version>3.5.1</mybatis-plus.version>
+        <druid.version>1.1.21</druid.version>
+        <mysql-connector-java.version>8.0.19</mysql-connector-java.version>
+        <easyexcel.version>1.1.2-beat1</easyexcel.version>
+        <camunda.version>7.18.0</camunda.version>
+        <elasticsearch.version>7.17.22</elasticsearch.version>
+        <cloud.version>0.0.1-SNAPSHOT</cloud.version>
+    </properties>
+
+    <dependencies>
+
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- 正确适配 Boot 2.7.x 的 Spring Cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>2021.0.9</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- 正确适配的 Spring Cloud Alibaba -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2021.0.5.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!--mysql驱动 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
+            <!-- mybatis-plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib</artifactId>
+                <version>1.8.22</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib-common</artifactId>
+                <version>1.8.22</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib-jdk7</artifactId>
+                <version>1.8.22</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib-jdk8</artifactId>
+                <version>1.8.22</version>
+            </dependency>
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>8.6.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.bigearpig</groupId>
+                <artifactId>common</artifactId>
+                <version>1.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <modules>
+        <module>common</module>
+        <module>server</module>
+        <module>gateway</module>
+    </modules>
+
+</project>
