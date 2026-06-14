@@ -1,0 +1,62 @@
+jasypt:
+  encryptor:
+    # 盐值
+    password: 123
+    # 指定加密方式
+    algorithm: PBEWithMD5AndDES
+    iv-generator-classname: org.jasypt.iv.NoIvGenerator
+    property:
+      # 标识为加密属性的前缀
+      prefix: ENC(
+      # 标识为加密属性的后缀
+      suffix: )
+server:
+  port: 9090
+spring:
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.128.128:8848
+        namespace: f99af842-0a0c-4101-83f9-2871a59a0890
+        group: DEFAULT_GROUP
+        cluster-name: DEFAULT
+    gateway:
+      default-filters:
+        - PreserveHostHeader
+      routes:
+        - id: server3sys
+          uri: lb://server3sys
+          predicates:
+            - Path=/server3sys/**
+          filters:
+            - StripPrefix=1
+        - id: server2sso
+          uri: lb://server2sso
+          predicates:
+            - Path=/server2sso/**
+          filters:
+            - StripPrefix=1
+  redis:
+    host: 192.168.128.128
+    port: 6379
+    password:
+    timeout: 10000
+    database: 0
+logging:
+  file:
+    name: ./logs/${spring.application.name}/out.log
+  level:
+    root: INFO
+  pattern:
+    console: '%d{yyyy/MM/dd-HH:mm:ss} [%thread] %clr(%-5level) %clr(%logger:%line{36}){cyan} %clr(%msg%n){green}'
+    file: '%d{yyyy/MM/dd-HH:mm:ss} [%thread] %-5level %logger:%line{36} %msg%n'
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

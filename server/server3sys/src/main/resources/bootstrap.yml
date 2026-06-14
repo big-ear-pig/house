@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: server3sys   # ⚠️ 重要，你的应用名称
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.168.128.128:8848      # Nacos 服务器地址
+        file-extension: yaml           # 配置文件格式，如 yaml 或 properties
+        namespace: f99af842-0a0c-4101-83f9-2871a59a0890     # (可选) 命名空间 ID，用于多环境隔离
+        group: DEFAULT_GROUP             # (可选) 配置分组，默认为 DEFAULT_GROUP
+        refresh-enabled: true            # (可选) 是否开启配置自动刷新，默认为 true
+        prefix: ${spring.application.name} # (可选) Data ID 的前缀，默认为应用名
