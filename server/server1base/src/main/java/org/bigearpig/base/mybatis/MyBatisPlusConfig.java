@@ -16,15 +16,8 @@ public class MyBatisPlusConfig {
 
 
     @Bean
-    public MetaObjectHandler getMetaObjectHandler() {
-        return new MetaHandler();
-    }
-
-
-    @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
         MybatisPlusInterceptor interceptor = new MybatisPlusInterceptor();
-
         // 分页插件
         interceptor.addInnerInterceptor(new PaginationInnerInterceptor(DbType.MYSQL));
         // 乐观锁插件

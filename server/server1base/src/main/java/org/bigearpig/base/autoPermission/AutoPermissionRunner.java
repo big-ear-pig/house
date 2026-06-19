@@ -28,8 +28,10 @@ import java.util.Map;
 @Component
 @Order(Ordered.LOWEST_PRECEDENCE)
 public class AutoPermissionRunner implements ApplicationRunner {
+
     @Autowired
     private ApplicationContext applicationContext;
+
     @Autowired
     private UserFeignClient userFeignClient;
     @Override

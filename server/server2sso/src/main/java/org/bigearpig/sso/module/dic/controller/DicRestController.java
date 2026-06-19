@@ -41,7 +41,7 @@ public class DicRestController {
 
 
 	@PostMapping(value = "/addDic")
-	@PreAuthorize(value = "hasAnyAuthority('manage:dic:addDic')")
+	@PreAuthorize(value = "hasAnyAuthority('server2sso:dic:addDic')")
 	public ResultData<DicVo> addDic(@RequestBody @Valid AddDicMo addDicMo) {
 		return ResultData.setObj(dicService.addDic(addDicMo));
 	}

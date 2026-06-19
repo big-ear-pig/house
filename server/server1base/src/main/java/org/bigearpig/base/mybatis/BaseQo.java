@@ -21,28 +21,5 @@ public class BaseQo implements Serializable {
 
 	private List<BaseOrderItem> orderItemList=new ArrayList<>();
 
-	private Long tableIdEq;
-
-	private Long createByEq;
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	private LocalDateTime createTimeLe;
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	private LocalDateTime createTimeGe;
-
-	private Long updateByEq;
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	private LocalDateTime updateTimeLe;
-	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-	private LocalDateTime updateTimeGe;
-
-	private Integer sortNumEq;
-
-	private Integer sortNumLe;
-
-	private Integer sortNumGe;
-
-	private Boolean delFlagEq;
-
-	private Long parentIdEq;
 
 }

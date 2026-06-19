@@ -28,6 +28,7 @@
         <module>server1base</module>
         <module>server3sys</module>
         <module>server2sso</module>
+        <module>server4shop</module>
     </modules>
     <build>
 

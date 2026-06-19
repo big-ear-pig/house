@@ -9,34 +9,25 @@
         <version>1.0</version>
     </parent>
 
-    <artifactId>server2sso</artifactId>
+    <artifactId>server4shop</artifactId>
 
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <dependencies>
-	      <!-- Spring Boot OAuth2 Authorization Server（核心依赖） -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-oauth2-authorization-server</artifactId>
-        </dependency>
         <dependency>
             <groupId>org.bigearpig</groupId>
             <artifactId>server1base</artifactId>
         </dependency>
     </dependencies>
-
     <build>
         <plugins>
-			<plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <excludes>
-                        <exclude>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </exclude>
-                    </excludes>
-                </configuration>
             </plugin>
             <!-- 确保编译时使用 JDK 8 -->
             <plugin>

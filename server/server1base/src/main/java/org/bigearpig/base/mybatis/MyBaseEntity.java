@@ -27,9 +27,12 @@ public class MyBaseEntity {
     private LocalDateTime updateTime;
 
     @TableField(fill = FieldFill.INSERT)
-    private Integer sortNum;
+    private Integer sortNum = 0;
 
     @TableField(fill = FieldFill.INSERT)
-    private Boolean delFlag;
+    private Boolean delFlag = false;
+
+    @TableField(fill = FieldFill.INSERT)
+    private Integer rowVersion = 0;
 
 }
